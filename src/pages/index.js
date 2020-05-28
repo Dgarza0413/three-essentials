@@ -4,8 +4,10 @@ import styled from "@emotion/styled"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
+import Products from "../components/products"
 import SEO from "../components/seo"
 import Subscriber from "../components/subscriber"
+
 
 const Content = styled.div`
   text-align: center;
@@ -15,6 +17,7 @@ const Content = styled.div`
   }
 `
 
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
@@ -22,10 +25,9 @@ const IndexPage = () => (
       <h1>3ssentials</h1>
       <p>There is much more in stock</p>
       <Subscriber />
+      <Products />
       <p>Now go build something great.</p>
-      {/* <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}> */}
       <Image />
-      {/* </div> */}
       <Link to="/page-2/">Go to page 2</Link>
     </Content>
   </Layout>
