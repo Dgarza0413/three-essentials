@@ -8,7 +8,6 @@ import Products from "../components/products"
 import SEO from "../components/seo"
 import Subscriber from "../components/subscriber"
 
-
 const Content = styled.div`
   text-align: center;
   margin-top: 10px;
@@ -29,7 +28,6 @@ const Content = styled.div`
 //     }
 //   }
 // `
-
 
 const IndexPage = () => (
   <Layout>
