@@ -1,22 +1,35 @@
 import React from 'react'
-import { Link, graphql } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import Layout from '../components/layout';
 
+// const Products = ({ data }) => {
 const Products = () => {
-    const data = graphql`{
-    allShopifyProduct(sort: { fields: [title] }) {
+    // console.log(data)
+    const data = useStaticQuery(
+        graphql`
+        query{
+    allShopifyProduct(sort: {
+            fields: [createdAt]
+            order: DESC
+          }) {
       edges {
         node {
           title
-          shopifyId
           description
+          handle
+          priceRange{
+              minVariantPrice{
+                  amount
+              }
+          }
         }
       }
     }
-  }
-`
+        }
+`)
+    console.log(data)
     return (
-        <Layout>
+        <>
             <h1>Products</h1>
             <ul>
                 {data.allShopifyProduct.edges.map(({ node }) => (
@@ -29,12 +42,10 @@ const Products = () => {
                     </li>
                 ))}
             </ul>
-        </Layout>
+        </>
     )
 }
-
 export default Products
-
 
 // export const query = graphql`
 //   {
@@ -44,12 +55,6 @@ export default Products
 //           title
 //           shopifyId
 //           description
-//           handle
-//           priceRange {
-//             minVariantPrice {
-//               amount
-//             }
-//           }
 //         }
 //       }
 //     }

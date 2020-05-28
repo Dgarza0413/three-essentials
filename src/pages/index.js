@@ -17,6 +17,19 @@ const Content = styled.div`
   }
 `
 
+// const data = graphql`
+// query {
+//     allShopifyProduct {
+//       edges {
+//         node {
+//           title
+//           description
+//         }
+//       }
+//     }
+//   }
+// `
+
 
 const IndexPage = () => (
   <Layout>

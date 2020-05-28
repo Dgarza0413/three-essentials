@@ -32,9 +32,11 @@ module.exports = {
       resolve: `gatsby-source-shopify`,
       options: {
         // The domain name of your Shopify shop.
-        shopName: `https://3-ssentials.myshopify.com/`,
+        shopName: `3-ssentials`,
         // The storefront access token
-        accessToken: `113c8ac35ac4d92b5116006a0cfccb57`,
+        accessToken: `a50cf6a4ef479bd25cd7d0fa673cdf11`,
+        apiVersion: `2020-04`,
+        verbose: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
