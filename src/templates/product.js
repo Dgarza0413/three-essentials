@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-const ProductTemplate = ({ pageContext }) => {
+const Product = ({ pageContext }) => {
   const { product } = pageContext
   return (
     <Layout>
@@ -9,4 +9,4 @@ const ProductTemplate = ({ pageContext }) => {
     </Layout>
   )
 }
-export default ProductTemplate
+export default Product

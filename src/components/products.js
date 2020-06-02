@@ -8,6 +8,7 @@ const Products = () => {
             allShopifyProduct(sort: {fields: [createdAt] order: DESC}) {
             edges {
                 node {
+                shopifyId
                 title
                 description
                 handle
@@ -21,7 +22,7 @@ const Products = () => {
         }
     }
 `)
-    console.log(data)
+
     return (
         <>
             <h1>Products</h1>

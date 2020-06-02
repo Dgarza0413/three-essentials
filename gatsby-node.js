@@ -8,9 +8,6 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             title
-            images {
-              originalSrc
-            }
             shopifyId
             handle
             description
@@ -28,11 +25,10 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  // Iterate over all products and create a new page using a template
-  // The product "handle" is generated automatically by Shopify
+
   result.data.allShopifyProduct.edges.forEach(({ node }) => {
     createPage({
-      path: `/product/${node.handle}`,
+      path: `/product/${node.handle}/`,
       component: path.resolve(`./src/templates/product.js`),
       context: {
         product: node,

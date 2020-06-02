@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "@emotion/styled"
 
 import Layout from "../components/layout"
@@ -16,19 +15,6 @@ const Content = styled.div`
   }
 `
 
-// const data = graphql`
-// query {
-//     allShopifyProduct {
-//       edges {
-//         node {
-//           title
-//           description
-//         }
-//       }
-//     }
-//   }
-// `
-
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
@@ -37,9 +23,7 @@ const IndexPage = () => (
       <p>There is much more in stock</p>
       <Subscriber />
       <Products />
-      <p>Now go build something great.</p>
       <Image />
-      <Link to="/page-2/">Go to page 2</Link>
     </Content>
   </Layout>
 )
