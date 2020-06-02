@@ -1,5 +1,9 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
+
+import "twin.macro"
+
 
 const Products = () => {
     const data = useStaticQuery(
@@ -10,8 +14,17 @@ const Products = () => {
                 node {
                 shopifyId
                 title
-                description
                 handle
+                description
+                images {
+                        localFile {
+                            childImageSharp {
+                                fluid(maxWidth: 200, maxHeight: 200){
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                    }
                 priceRange {
                         minVariantPrice{
                             amount
@@ -23,20 +36,28 @@ const Products = () => {
     }
 `)
 
+
     return (
         <>
             <h1>Products</h1>
-            <ul>
-                {data.allShopifyProduct.edges.map(({ node }) => (
-                    <li key={node.shopifyId}>
-                        <h3>
-                            <Link to={`/product/${node.handle}`}>{node.title}</Link>
-                            {" - "}${node.priceRange.minVariantPrice.amount}
-                        </h3>
-                        <p>{node.description}</p>
-                    </li>
-                ))}
-            </ul>
+            <div tw="grid grid-cols-4">
+                {data.allShopifyProduct.edges.map(({ node }) => {
+                    return (
+                        <div
+                            tw="sm:w-48 grid-cols-4
+                                lg:w-48 grid-cols-4"
+                            key={node.shopifyId}
+                        >
+                            <Link
+                                to={`/product/${node.handle}`}
+                                tw="rounded-lg">
+                                <Img fluid={node.images[0].localFile.childImageSharp.fluid} />
+                            </Link>
+                        </div>
+                    )
+                }
+                )}
+            </div>
         </>
     )
 }
