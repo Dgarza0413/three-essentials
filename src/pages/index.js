@@ -7,6 +7,8 @@ import Products from "../components/products"
 import SEO from "../components/seo"
 import Subscriber from "../components/subscriber"
 
+import 'twin.macro';
+
 const Content = styled.div`
   text-align: center;
   margin-top: 10px;
@@ -19,9 +21,18 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Content>
-      <h1>3ssentials</h1>
-      <p>There is much more in stock</p>
-      <Subscriber />
+      <div tw="
+                h-64
+                mb-16
+                bg-blue-500
+                rounded-md
+              "
+      >
+        <h1>3ssentials</h1>
+        <p>There is much more in stock</p>
+      </div>
+
+      {/* <Subscriber /> */}
       <Products />
       <Image />
     </Content>
