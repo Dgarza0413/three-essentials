@@ -1,3 +1,9 @@
+const path = require('path')
+
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
 module.exports = {
   siteMetadata: {
     title: `3ssentials`,
@@ -16,6 +22,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-layout`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -32,11 +39,19 @@ module.exports = {
       resolve: `gatsby-source-shopify`,
       options: {
         // The domain name of your Shopify shop.
-        shopName: `3-ssentials`,
+        // shopName: `3-ssentials`,
+        shopName: process.env.SHOP_NAME,
         // The storefront access token
-        accessToken: `a50cf6a4ef479bd25cd7d0fa673cdf11`,
+        // accessToken: `a50cf6a4ef479bd25cd7d0fa673cdf11`,
+        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
         apiVersion: `2020-04`,
         verbose: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        '~': path.join(__dirname, 'src/'),
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
