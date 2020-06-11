@@ -1,42 +1,17 @@
-import React from "react"
-import styled from "@emotion/styled"
+import React from 'react'
+import { Link } from 'gatsby'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import Products from "../components/products"
-import SEO from "../components/seo"
-import Subscriber from "../components/subscriber"
-
-import 'twin.macro';
-
-const Content = styled.div`
-  text-align: center;
-  margin-top: 10px;
-  p {
-    font-weight: bold;
-  }
-`
+import SEO from '~/components/seo'
+import ProductGrid from '~/components/ProductGrid'
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <Content>
-      <div tw="
-                h-64
-                mb-16
-                bg-blue-500
-                rounded-md
-              "
-      >
-        <h1>3ssentials</h1>
-        <p>There is much more in stock</p>
-      </div>
-
-      {/* <Subscriber /> */}
-      <Products />
-      <Image />
-    </Content>
-  </Layout>
+  <>
+    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <h1>There is much more than three items</h1>
+    <p>Welcome to your new Shop powered by Gatsby and Shopify.</p>
+    <ProductGrid />
+    {/* <Link to="/page-2/">Go to page 2</Link> */}
+  </>
 )
 
 export default IndexPage

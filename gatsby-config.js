@@ -7,7 +7,8 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `3ssentials`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Kick off your next, great Gatsby project with this default starter. 
+    This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
   plugins: [
@@ -32,18 +33,18 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/clear.png`, // This path is relative to the root of the site.
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
       resolve: `gatsby-source-shopify`,
       options: {
         // The domain name of your Shopify shop.
-        // shopName: `3-ssentials`,
-        shopName: process.env.SHOP_NAME,
+        shopName: `3-ssentials`,
+        // shopName: process.env.SHOP_NAME,
         // The storefront access token
-        // accessToken: `a50cf6a4ef479bd25cd7d0fa673cdf11`,
-        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+        accessToken: `a50cf6a4ef479bd25cd7d0fa673cdf11`,
+        // accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
         apiVersion: `2020-04`,
         verbose: true,
       },
