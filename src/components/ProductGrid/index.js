@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
-import { css } from '@emotion/core'
+import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
+// import { useSpring, animated } from 'react-spring'
 
 import StoreContext from '~/context/StoreContext'
 import {
@@ -14,7 +15,6 @@ import { Img } from '~/utils/styles'
 
 const ProductGrid = () => {
   const { store: { checkout } } = useContext(StoreContext)
-
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
@@ -44,66 +44,61 @@ const ProductGrid = () => {
       }
     `
   )
-  // const { allShopifyProduct } = useStaticQuery(
-  //   graphql`
-  //     query {
-  //       allShopifyProduct(
-  //         sort: {
-  //           fields: [createdAt]
-  //           order: DESC
-  //         }
-  //       ) {
-  //         edges {
-  //           node {
-  //             id
-  //             title
-  //             handle
-  //             createdAt
-  //             images {
-  //               id
-  //               originalSrc
-  //               localFile {
-  //                 childImageSharp {
-  //                   fluid(maxWidth: 910) {
-  //                     ...GatsbyImageSharpFluid_withWebp_tracedSVG
-  //                   }
-  //                 }
-  //               }
-  //             }
-  //             variants {
-  //               price
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `
-  // )
 
-  console.log(allShopifyCollection)
+  // const getPrice = price => Intl.NumberFormat(undefined, {
+  //   currency: checkout.currencyCode ? checkout.currencyCode : 'EUR',
+  //   minimumFractionDigits: 2,
+  //   style: 'currency',
+  // }).format(parseFloat(price ? price : 0))
+  const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 
-  const getPrice = price => Intl.NumberFormat(undefined, {
-    currency: checkout.currencyCode ? checkout.currencyCode : 'EUR',
-    minimumFractionDigits: 2,
-    style: 'currency',
-  }).format(parseFloat(price ? price : 0))
-
+  let parallax;
   return (
-    <div>
+    <Parallax pages={3} ref={ref => parallax = ref}
+      style={{
+        backgroundColor: '#20232f',
+        zIndex: -1
+      }}
+    >
+      <ParallaxLayer
+        offset={1}
+        speed={1}
+        style={{ backgroundColor: '#805E73', zIndex: -1 }}
+      />
+      <ParallaxLayer
+        offset={2}
+        speed={1}
+        style={{ backgroundColor: '#87BCDE', zIndex: -1 }}
+      />
+      <ParallaxLayer
+        offset={0}
+        speed={0}
+        factor={3}
+        style={{
+          backgroundImage: url('stars', true),
+          backgroundSize: 'cover',
+          zIndex: -1
+        }}
+      />
       {
         allShopifyCollection.group.map(({ nodes: [{ title, products }] }) => {
           return <div>
-            <div
-              css={{
-                height: '400px',
-                backgroundColor: 'blue'
-              }}
-            >{title}</div>
+            {title !== "Home page"
+              ?
+              <div
+                style={{
+                  height: '400px',
+                  backgroundSize: '80%',
+                  backgroundPosition: 'center',
+                  // backgroundImage: url('clients', true),
+                  // zIndex: 1
+                }}
+              >
+                {title}
+              </div>
+              : ""}
             <Grid>
               {products.map(({ handle, images: [image], title }) => {
-                console.log(handle)
-                console.log(image)
-                console.log(title)
                 return <>
                   <Link to={`/product/${handle}`}>
                     {image !== undefined
@@ -112,18 +107,35 @@ const ProductGrid = () => {
                         alt={handle}
                         fadeIn={true}
                       />
-                      : <img src={"https://via.placeholder.com/150"} />
+                      : <img src={"https://via.placeholder.com/900"} />
                     }
                     {handle}
                     {title}
                   </Link>
+                  <ParallaxLayer
+                    offset={2.5}
+                    speed={-0.4}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      pointerEvents: 'none'
+                    }}
+                  >
+                    <img
+                      src={url('earth')}
+                      style={{ width: '60%' }}
+                    />
+                  </ParallaxLayer>
                 </>
               })}
             </Grid>
+            {/* </ParallaxLayer> */}
           </div>
         })
       }
-    </div>
+      {/* </ParallaxLayer> */}
+    </Parallax >
   )
 }
 
