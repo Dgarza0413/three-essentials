@@ -113,7 +113,7 @@ const ProductGrid = () => {
                     {title}
                   </Link>
                   <ParallaxLayer
-                    offset={2.5}
+                    offset={2.2}
                     speed={-0.4}
                     style={{
                       display: 'flex',

@@ -4,6 +4,7 @@ import { breakpoints } from '../../utils/styles'
 
 
 export const Grid = styled.div`
+  margin: 0% 10%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
@@ -25,7 +26,6 @@ export const Product = styled.div`
 
 export const Hover = styled.div`
   &:hover {
-    
     color: grey;
     opacity: 0.5;
   }
@@ -42,7 +42,6 @@ export const PriceTag = styled.span`
   font-size: 1rem;
   text-align: center;
   margin-top: 15px;
-
   :before {
     content: '- '
   }
