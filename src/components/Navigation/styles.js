@@ -14,7 +14,7 @@ export const Container = styled.div`
   align-items: baseline;
   padding: 1.45rem;
   // margin: 0 auto;
-  max-width: 960px;
+  // max-width: 960px;
 `
 
 export const MenuLink = styled(Link)`

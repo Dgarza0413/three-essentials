@@ -55,10 +55,7 @@ const ProductGrid = () => {
   let parallax;
   return (
     <Parallax pages={3} ref={ref => parallax = ref}
-      style={{
-        backgroundColor: '#20232f',
-        zIndex: -1
-      }}
+      style={{ backgroundColor: '#20232f', zIndex: -1 }}
     >
       <ParallaxLayer
         offset={1}
@@ -70,6 +67,33 @@ const ProductGrid = () => {
         speed={1}
         style={{ backgroundColor: '#87BCDE', zIndex: -1 }}
       />
+
+      <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
+        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%', zIndex: -1 }} />
+        <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%', zIndex: -1 }} />
+      </ParallaxLayer>
+
+      <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
+        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%', zIndex: -1 }} />
+        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%', zIndex: -1 }} />
+      </ParallaxLayer>
+
+      <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
+        <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%', zIndex: -1 }} />
+        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%', zIndex: -1 }} />
+      </ParallaxLayer>
+
+      <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.4 }}>
+        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '60%', zIndex: -1 }} />
+        <img src={url('cloud')} style={{ display: 'block', width: '25%', marginLeft: '30%', zIndex: -1 }} />
+        <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '80%', zIndex: -1 }} />
+      </ParallaxLayer>
+
+      <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
+        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%', zIndex: -1 }} />
+        <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%', zIndex: -1 }} />
+      </ParallaxLayer>
+
       <ParallaxLayer
         offset={0}
         speed={0}
@@ -91,7 +115,7 @@ const ProductGrid = () => {
                   backgroundSize: '80%',
                   backgroundPosition: 'center',
                   // backgroundImage: url('clients', true),
-                  // zIndex: 1
+                  zIndex: 1
                 }}
               >
                 {title}
@@ -107,7 +131,9 @@ const ProductGrid = () => {
                         alt={handle}
                         fadeIn={true}
                       />
-                      : <img src={"https://via.placeholder.com/900"} />
+                      : <img
+                        style={{ zIndex: 1 }}
+                        src={"https://via.placeholder.com/900"} />
                     }
                     {handle}
                     {title}
