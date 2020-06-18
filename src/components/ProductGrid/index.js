@@ -4,13 +4,7 @@ import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 // import { useSpring, animated } from 'react-spring'
 
 import StoreContext from '~/context/StoreContext'
-import {
-  Grid,
-  Product,
-  Title,
-  PriceTag,
-  Hover
-} from './styles'
+import { Grid } from './styles'
 import { Img } from '~/utils/styles'
 
 const ProductGrid = () => {
@@ -67,6 +61,11 @@ const ProductGrid = () => {
         speed={1}
         style={{ backgroundColor: '#87BCDE', zIndex: -1 }}
       />
+      <ParallaxLayer
+        offset={1.9999}
+        speed={1}
+        style={{ backgroundColor: '#8FAD88', zIndex: -1 }}
+      />
 
       <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
         <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%', zIndex: -1 }} />
@@ -104,6 +103,22 @@ const ProductGrid = () => {
           zIndex: -1
         }}
       />
+
+      <ParallaxLayer
+        offset={2.2}
+        speed={-0.4}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          pointerEvents: 'none'
+        }}
+      >
+        <img
+          src={url('earth')}
+          style={{ width: '60%' }}
+        />
+      </ParallaxLayer>
       {
         allShopifyCollection.group.map(({ nodes: [{ title, products }] }) => {
           return <div>
@@ -111,14 +126,17 @@ const ProductGrid = () => {
               ?
               <div
                 style={{
-                  height: '400px',
+                  height: '500px',
                   backgroundSize: '80%',
                   backgroundPosition: 'center',
-                  // backgroundImage: url('clients', true),
                   zIndex: 1
                 }}
               >
-                {title}
+                <span
+                  style={{
+                    fontSize: '50px',
+                    color: 'white'
+                  }}>{title}</span>
               </div>
               : ""}
             <Grid>
@@ -135,32 +153,15 @@ const ProductGrid = () => {
                         style={{ zIndex: 1 }}
                         src={"https://via.placeholder.com/900"} />
                     }
-                    {handle}
-                    {title}
+                    {/* {handle}
+                    {title} */}
                   </Link>
-                  <ParallaxLayer
-                    offset={2.2}
-                    speed={-0.4}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      pointerEvents: 'none'
-                    }}
-                  >
-                    <img
-                      src={url('earth')}
-                      style={{ width: '60%' }}
-                    />
-                  </ParallaxLayer>
                 </>
               })}
             </Grid>
-            {/* </ParallaxLayer> */}
           </div>
         })
       }
-      {/* </ParallaxLayer> */}
     </Parallax >
   )
 }
