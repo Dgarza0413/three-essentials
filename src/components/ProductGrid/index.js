@@ -50,8 +50,12 @@ const ProductGrid = () => {
       {/* <AniLink paintDrip to="/page-2"> Fade to page 2 </AniLink> */}
 
       <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73', zIndex: -1 }} />
-      <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE', zIndex: -1 }} />
       <ParallaxLayer offset={1.9999} speed={1} style={{ backgroundColor: '#8FAD88', zIndex: -1 }} />
+      <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE', zIndex: -1 }} />
+      <ParallaxLayer offset={2.9999} speed={1} style={{ backgroundColor: '#87BCDE', zIndex: -1 }} />
+      <ParallaxLayer offset={3} speed={1} style={{ backgroundColor: '#87BCDE', zIndex: -1 }} />
+      <ParallaxLayer offset={4} speed={1} style={{ backgroundColor: '#87BCDE', zIndex: -1 }} />
+      <ParallaxLayer offset={5} speed={1} style={{ backgroundColor: '#87BCDE', zIndex: -1 }} />
 
       <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}      >
         <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%', zIndex: -1 }} />

@@ -19,7 +19,7 @@ export const Container = styled.div`
 `
 
 export const MenuLink = styled(Link)`
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 2rem;
   font-weight: bold;
