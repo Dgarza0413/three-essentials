@@ -10,6 +10,7 @@ import {
   GridLeft,
   GridRight,
 } from '~/utils/styles'
+
 import {
   ProductTitle,
   ProductDescription

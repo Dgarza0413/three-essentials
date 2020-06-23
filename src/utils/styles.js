@@ -39,7 +39,7 @@ export const Img = styled(Image)`
 `
 
 export const Container = styled.div`
-  margin: 0 auto;
+  margin: 6rem auto auto auto;
   max-width: 960px;
 `
 

@@ -133,6 +133,7 @@ const ProductForm = ({ product }) => {
           <br />
         </React.Fragment>
       ))}
+      {!available && <p>This Product is out of Stock!</p>}
       <label htmlFor="quantity">Quantity </label>
       <input
         css={{
@@ -167,7 +168,6 @@ const ProductForm = ({ product }) => {
       >
         Add to Cart
       </button>
-      {!available && <p>This Product is out of Stock!</p>}
     </>
   )
 }

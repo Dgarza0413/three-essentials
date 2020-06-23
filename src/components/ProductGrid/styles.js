@@ -9,8 +9,12 @@ export const Grid = styled.div`
   grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
 
+  @media (max-width: ${breakpoints.m}px){
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   @media (max-width: ${breakpoints.s}px){
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 `
 

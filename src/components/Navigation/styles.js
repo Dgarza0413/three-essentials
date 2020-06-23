@@ -4,8 +4,9 @@ import { Link } from 'gatsby'
 import { breakpoints } from '../../utils/styles'
 
 export const Wrapper = styled.div`
-  // background: rebeccapurple;
-  // margin-bottom: 1.45rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
 `
 
 export const Container = styled.div`

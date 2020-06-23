@@ -8,11 +8,14 @@ import { GlobalStyle } from '~/utils/styles'
 import Navigation from '~/components/Navigation'
 
 const Wrapper = styled.div`
+  // height: 1000px;
   // margin: 0 auto;
   // max-width: 960px;
   // padding: 0px 1.0875rem 1.45rem;
 `
-
+const Footer = styled.footer`
+  height: 100px;
+`
 const Layout = ({ children }) => {
   return (
     <ContextProvider>
@@ -29,14 +32,10 @@ const Layout = ({ children }) => {
         `}
         render={data => (
           <>
-            <Navigation siteTitle={data.site.siteMetadata.title} />
             <Wrapper>
+              <Navigation siteTitle={data.site.siteMetadata.title} />
               {children}
-              {/* <footer>
-                © {new Date().getFullYear()}, Built with
-                {` `}
-                <a href="https://www.gatsbyjs.org">Gatsby</a>
-              </footer> */}
+              {/* <Footer>Something</Footer> */}
             </Wrapper>
           </>
         )}
