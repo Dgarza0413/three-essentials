@@ -1,21 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import styled from '@emotion/styled'
+// import styled from '@emotion/styled'
 
 import ContextProvider from '~/provider/ContextProvider'
 import { GlobalStyle } from '~/utils/styles'
 import Navigation from '~/components/Navigation'
 
-const Wrapper = styled.div`
-  // height: 1000px;
-  // margin: 0 auto;
-  // max-width: 960px;
-  // padding: 0px 1.0875rem 1.45rem;
-`
-const Footer = styled.footer`
-  height: 100px;
-`
+// const Wrapper = styled.div`
+//   // height: 1000px;
+//   // margin: 0 auto;
+//   // max-width: 960px;
+//   // padding: 0px 1.0875rem 1.45rem;
+// `
+
 const Layout = ({ children }) => {
   return (
     <ContextProvider>
@@ -32,11 +30,10 @@ const Layout = ({ children }) => {
         `}
         render={data => (
           <>
-            <Wrapper>
-              <Navigation siteTitle={data.site.siteMetadata.title} />
-              {children}
-              {/* <Footer>Something</Footer> */}
-            </Wrapper>
+            {/* <Wrapper> */}
+            <Navigation siteTitle={data.site.siteMetadata.title} />
+            {children}
+            {/* </Wrapper> */}
           </>
         )}
       />

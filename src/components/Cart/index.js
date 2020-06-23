@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import { css } from '@emotion/core'
 
 import StoreContext from '~/context/StoreContext'
 import LineItem from './LineItem'
