@@ -122,6 +122,7 @@ const ProductGrid = () => {
                     />
                     : <img
                       style={{ zIndex: 1 }}
+                      alt={handle}
                       src={"https://via.placeholder.com/900"} />
                   }
                 </Link>
