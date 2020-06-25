@@ -4,8 +4,10 @@ import Client from 'shopify-buy'
 import Context from '~/context/StoreContext'
 
 const client = Client.buildClient({
-  storefrontAccessToken: process.env.SHOPIFY_ACCESS_TOKEN,
-  domain: `${process.env.SHOP_NAME}.myshopify.com`,
+  // storefrontAccessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+  storefrontAccessToken: 'a50cf6a4ef479bd25cd7d0fa673cdf11',
+  // domain: `${process.env.SHOP_NAME}.myshopify.com`,
+  domain: `3-ssentials.myshopify.com`,
 })
 console.log(process.env.SHOPIFY_ACCESS_TOKEN)
 console.log(process.env.SHOP_NAME)
@@ -104,7 +106,6 @@ const ContextProvider = ({ children }) => {
           const lineItemsToUpdate = [
             { id: lineItemID, quantity: parseInt(quantity, 10) },
           ]
-
           return client.checkout
             .updateLineItems(checkoutID, lineItemsToUpdate)
             .then(res => {
