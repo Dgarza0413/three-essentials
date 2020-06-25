@@ -24,12 +24,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-layout`,
-    // {
-    //   resolve: 'gatsby-plugin-transition-link',
-    //   options: {
-    //     layout: require.resolve(`./src/layouts`),
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

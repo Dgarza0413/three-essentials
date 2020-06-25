@@ -9,6 +9,7 @@ const client = Client.buildClient({
 })
 console.log(process.env.SHOPIFY_ACCESS_TOKEN)
 console.log(process.env.SHOP_NAME)
+console.log(process.env.NODE_ENV)
 const ContextProvider = ({ children }) => {
   let initialStoreState = {
     client,
