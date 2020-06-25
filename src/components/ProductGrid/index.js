@@ -103,7 +103,7 @@ const ProductGrid = () => {
               </div>
               : ""}
             <Grid>
-              {products.map(({ handle, images: [image], title }) => {
+              {products.map(({ handle, images: [image] }) => {
                 return (
                   <Link to={`/product/${handle}`}>
                     {image !== undefined
