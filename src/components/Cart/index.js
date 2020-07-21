@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 
 import StoreContext from '~/context/StoreContext'
 import LineItem from './LineItem'
@@ -17,20 +18,23 @@ const Cart = () => {
   ))
 
   return (
-    <div>
+    <>
       <div css={{
-        marginBottom: '5%'
+        marginBottom: '5%',
+        color: 'white'
       }}>
         {lineItems}
       </div>
-      <h2>Subtotal</h2>
-      <p>$ {checkout.subtotalPrice}</p>
-      <br />
-      <h2>Taxes</h2>
-      <p>$ {checkout.totalTax}</p>
-      <br />
-      <h2>Total</h2>
-      <p>$ {checkout.totalPrice}</p>
+      <div css={{ color: 'white' }}>
+        <h2>Subtotal</h2>
+        <p>$ {checkout.subtotalPrice}</p>
+        <br />
+        <h2>Taxes</h2>
+        <p>$ {checkout.totalTax}</p>
+        <br />
+        <h2>Total</h2>
+        <p>$ {checkout.totalPrice}</p>
+      </div>
       <br />
       <button
         css={{
@@ -47,7 +51,7 @@ const Cart = () => {
       >
         Check out
       </button>
-    </div>
+    </>
   )
 }
 

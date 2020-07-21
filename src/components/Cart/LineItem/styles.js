@@ -6,5 +6,5 @@ export const Wrapper = styled.div`
   align-items: center;
   flex-wrap: wrap;
   padding: 2rem 0 2rem 0;
-  border-bottom: 1px solid black
+  border-bottom: 1px solid white
 `

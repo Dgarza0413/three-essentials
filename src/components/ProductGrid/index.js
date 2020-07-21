@@ -77,9 +77,9 @@ const ProductGrid = () => {
 
       <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover', zIndex: -1 }} />
 
-      <ParallaxLayer offset={2.7} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none', }}>
+      {/* <ParallaxLayer offset={2.7} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none', }}>
         <img alt={"cloud"} src={url('earth')} style={{ width: '60%' }} />
-      </ParallaxLayer>
+      </ParallaxLayer> */}
       {
         allShopifyCollection.group.map(({ nodes: [{ title, products }] }) => {
           return <>

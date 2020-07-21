@@ -98,7 +98,8 @@ const ProductForm = ({ product }) => {
       <h3 css={{
         width: '100%',
         fontSize: '32px',
-        fontWeight: '600'
+        fontWeight: '600',
+        color: 'white'
       }}>{price}</h3>
       {options.map(({ id, name, values }, index) => (
         <React.Fragment key={id}>
@@ -106,6 +107,7 @@ const ProductForm = ({ product }) => {
             css={{
               width: '100%',
               padding: '12px 0px',
+              color: 'white'
               // fontSize: '26px'
             }}
             htmlFor={name}>{name} </label>
@@ -114,7 +116,7 @@ const ProductForm = ({ product }) => {
               width: '100%',
               margin: '10px 0px',
               padding: '10px 16px',
-              border: '1px solid black'
+              border: '1px solid black',
             }}
             name={name}
             key={id}
@@ -134,7 +136,12 @@ const ProductForm = ({ product }) => {
         </React.Fragment>
       ))}
       {!available && <p>This Product is out of Stock!</p>}
-      <label htmlFor="quantity">Quantity </label>
+      <label
+        htmlFor="quantity"
+        css={{
+          color: 'white'
+        }}
+      >Quantity </label>
       <input
         css={{
           border: '1px solid black',
