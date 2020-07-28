@@ -47,11 +47,10 @@ const LineItem = props => {
       <button
         css={{
           padding: '10px',
-          backgroundColor: 'black',
-          color: 'white',
+          backgroundColor: 'white',
+          color: 'black',
           '&:hover': {
             backgroundColor: 'grey',
-            color: 'white'
           }
         }}
         onClick={handleRemove}>Remove</button>

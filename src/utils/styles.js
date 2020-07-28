@@ -49,8 +49,9 @@ export const TwoColumnGrid = styled.div`
   grid-template-rows: 1auto;
   grid-template-areas: "left . right";
 
-  @media (max-width: ${breakpoints.l}px){
+  @media (max-width: ${breakpoints.m}px){
     display: block;
+    margin: auto 10% 10% 10%;
   }
 `
 
@@ -66,7 +67,7 @@ export const MainContent = styled.main`
   margin-top: 80px;
   margin-bottom: 40px;
 
-  @media (max-width: ${breakpoints.l}px){
+  @media (max-width: ${breakpoints.m}px){
     margin-top: 40px;
     margin-bottom: 20px;
   }

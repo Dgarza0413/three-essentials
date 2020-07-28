@@ -163,8 +163,8 @@ const ProductForm = ({ product }) => {
           width: '100%',
           padding: '10px 16px',
           textAlign: 'center',
-          backgroundColor: 'black',
-          color: 'white',
+          backgroundColor: 'white',
+          color: 'black',
           '&:hover': {
             backgroundColor: 'grey',
           }
